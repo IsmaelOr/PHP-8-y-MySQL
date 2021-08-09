@@ -1,3 +1,7 @@
+<?php
+if($_POST) echo $_POST['nombre'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +11,8 @@
     <title>Formularios</title>
 </head>
 <body>
-    <form action="recibe_GET.php" method="GET" name="">
+    <!-- Con $_SERVER[PHP_SELF] nos trae la ruta actual de nuestro archivo-->
+    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" method="POST" name="">
         <input type="text" placeholder="Nombre:" name="nombre"> <br/>
         Sexo: <label for="hombre">Hombre</label>
         <input type="radio" name="sexo" value="hombre" id="hombre">
